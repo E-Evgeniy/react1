@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Technologies from './Technologies';
 
 export default class HelloWorld extends React.Component {
   static propTypes = {
@@ -25,7 +24,6 @@ export default class HelloWorld extends React.Component {
   render() {
     return (
       <div>
-        <Technologies />
         <h3>
          456 Hello, {this.state.name}!
         </h3>

@@ -1,8 +1,8 @@
 import React from 'react';
-import './Header.css'
+import s from './Header.module.css'
 
 const Header = () => {
-   return <header className='header'>
+   return <header className={s.header}>
           <img src = 'https://1000logos.net/wp-content/uploads/2022/02/Logo-Yazilim-logo-tumb.jpg'/>
     </header>
 }

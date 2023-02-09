@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+   
+
+
 export default class HelloWorld extends React.Component {
   static propTypes = {
     name: PropTypes.string.isRequired, // this is passed from the Rails view
@@ -23,6 +27,7 @@ export default class HelloWorld extends React.Component {
 
   render() {
     return (
+      <BrowserRouter>
       <div>
         <h3>
          456 Hello, {this.state.name}!
@@ -39,7 +44,9 @@ export default class HelloWorld extends React.Component {
             onChange={(e) => this.updateName(e.target.value)}
           />
         </form>
+
       </div>
+      </BrowserRouter>
     );
   }
 }

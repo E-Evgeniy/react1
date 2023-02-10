@@ -5,6 +5,25 @@ import { NavLink } from 'react-router-dom';
 const setActive = (({ isActive }) =>
 isActive ? s.active : undefined)
 
+let dialogsData = [
+    {id: 1, name: 'Peter'},
+    {id: 2, name: 'Ivan'},
+    {id: 3, name: 'Eva'},
+    {id: 4, name: 'Anna'}
+]
+
+let dialogsElements = dialogsData
+    .map( dialog => <DialogsItem name = {dialog.name} id={dialog.id} />);
+
+let messagesData = [
+    {id: 1, message: 'Hi'},
+    {id: 2, message: 'How are you?'},
+    {id: 3, message: 'Bye'}
+]
+
+let messagesElements = messagesData
+    .map( dialog => <DialogsItem name = {dialog.name} id={dialog.id} />);
+
 const DialogsItem = (props) => {
 
     let path = "/dialogs/" + props.id

@@ -5,52 +5,47 @@ import { NavLink } from 'react-router-dom';
 const setActive = (({ isActive }) =>
 isActive ? s.active : undefined)
 
-let dialogsData = [
+let dialogs = [
     {id: 1, name: 'Peter'},
     {id: 2, name: 'Ivan'},
     {id: 3, name: 'Eva'},
     {id: 4, name: 'Anna'}
 ]
 
-let dialogsElements = dialogsData
-    .map( dialog => <DialogsItem name = {dialog.name} id={dialog.id} />);
-
-let messagesData = [
+let messages = [
     {id: 1, message: 'Hi'},
     {id: 2, message: 'How are you?'},
     {id: 3, message: 'Bye'}
 ]
 
-let messagesElements = messagesData
-    .map( dialog => <DialogsItem name = {dialog.name} id={dialog.id} />);
-
 const DialogsItem = (props) => {
 
     let path = "/dialogs/" + props.id
 
-    return <div className={s.dialogs + ' ' + s.active}>
+    return <div >
         <NavLink to={path} className={setActive}> {props.name} </NavLink>
     </div>
 }
 
 const Message = (props) => {
-    return <div className={s.message}>{props.message}</div>
+    return <div className={s.message}> {props.message}</div>
 }
+
+let dialogsElements = dialogs
+    .map( d => <DialogsItem name = {d.name} id={d.id} />);
+
+let messagesElements = messages
+    .map( m => <Message message = {m.message} />);
 
 const Dialogs = (props) => {
     return (
         <div className={s.dialogs}>
           <div className={s.dialogsItems}>     
-            <DialogsItem name = "Peter" id="1" />   
-            <DialogsItem name = "Ivan" id="2" /> 
-            <DialogsItem name = "Eva" id="3" /> 
-            <DialogsItem name = "Anna" id="4" />     
+            {dialogsElements}     
           </div>
 
           <div className={s.messages}>
-            <Message message = "Hi" /> 
-            <Message message = "How are you?" />
-            <Message message = "Bye" />
+            {messagesElements}
           </div>
         </div>
     )

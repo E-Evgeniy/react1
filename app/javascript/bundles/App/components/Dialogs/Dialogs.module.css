@@ -5,12 +5,12 @@
 
 }
 
-.dialogsItems {
+.dialogsItem {
     padding:10px;
     color: white;    
 }
 
-.dialogsItems .active {
+.dialogsItem .active {
     color: gold;
 
 }
